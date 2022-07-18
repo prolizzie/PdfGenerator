@@ -29,9 +29,9 @@ public class Main {
                 System.out.println("Введите число");
             }
         }
-
-        String filePath = "/Users/prolizzie/IdeaProjects/RandomPdfGeneration/src/main/pdf_output.pdf";
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(filePath));
+        
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter("./pdf_output.pdf));
+        String path = pdfDoc.getPath();                                                   
         pdfDoc.setDefaultPageSize(PageSize.A4.rotate());
         Document doc = new Document(pdfDoc);
         PdfFontFactory.register("/fonts/FreeSans.ttf");
@@ -73,6 +73,6 @@ public class Main {
         }
         doc.add(table);
         doc.close();
-        System.out.println("Файл создан. Путь: /Users/prolizzie/IdeaProjects/RandomPdfGeneration/src/main/pdf_output.pdf");
+        System.out.println("Файл создан.);
     }
 }
